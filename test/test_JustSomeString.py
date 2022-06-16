@@ -41,6 +41,6 @@ class TestJustSomeString:
         result = complexop.operate(text, number)
 
         #Assert
-        assert result == ''
+        assert result == 'asd'
 
         pass
