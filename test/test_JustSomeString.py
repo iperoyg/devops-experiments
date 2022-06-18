@@ -1,46 +1,46 @@
-import re
 from complexoperations.JustSomeString import JustSomeString
 
+
 class TestJustSomeString:
-    
+
     def test1(self):
-        #Arrange
+        # Arrange
         complexop = JustSomeString()
         number = 1
         text = 'test test test'
 
-        #Act
+        # Act
         result = complexop.operate(text, number)
 
-        #Assert
+        # Assert
         assert result == ''
 
         pass
-    
+
     def test2(self):
-        #Arrange
+        # Arrange
         complexop = JustSomeString()
         number = 3
         text = 'abcd'
 
-        #Act
+        # Act
         result = complexop.operate(text, number)
 
-        #Assert
+        # Assert
         assert result == 'bcabdacd'
 
         pass
 
     def test3(self):
-        #Arrange
+        # Arrange
         complexop = JustSomeString()
         number = 0
         text = 'abcd'
 
-        #Act
+        # Act
         result = complexop.operate(text, number)
 
-        #Assert
+        # Assert
         assert result == ''
 
         pass

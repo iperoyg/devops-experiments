@@ -1,17 +1,17 @@
-import re
 from complexoperations.JustSomeMath import JustSomeMath
 
+
 class TestJustSomeMath:
-    
+
     def test1(self):
-        #Arrange
+        # Arrange
         complexop = JustSomeMath()
         number = 1
 
-        #Act
+        # Act
         result = complexop.operate(number)
 
-        #Assert
+        # Assert
         assert result > 0
 
         pass
