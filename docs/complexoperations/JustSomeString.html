@@ -64,18 +64,28 @@
                         <label class="view-source-button" for="JustSomeString-view-source"><span>View Source</span></label>
 
                         <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="k">class</span> <span class="nc">JustSomeString</span><span class="p">:</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>        <span class="k">pass</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>        <span class="sd">&#39;&#39;&#39;</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="sd">        Replicates the text for the n of times informed in the &#39;n&#39;</span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="sd">        parameter and then removes the elements in multiple positions of the</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="sd">        same parameter</span>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="sd">        &#39;&#39;&#39;</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>        <span class="n">replicated</span> <span class="o">=</span> <span class="n">text</span> <span class="o">*</span> <span class="n">n</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>        <span class="n">cleaned</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">e</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">replicated</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">])</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>        <span class="k">return</span> <span class="n">cleaned</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a>    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="sd">    Provides `nonsense` string operations for educational purposes only</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>        <span class="sd">&quot;&quot;&quot;String  operations init&quot;&quot;&quot;</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>        <span class="k">pass</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>        <span class="sd">&#39;&#39;&#39;</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="sd">        Replicates the text for the n of times informed in the &#39;n&#39;</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="sd">        parameter and then removes the elements in multiple positions of the</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="sd">        same parameter</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">        :param str text: The text to be replicated and cropped</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="sd">        :param int n: The number of replications and the position</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="sd">            multiple for removal</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="sd">        :return string: the operation result</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="sd">        &#39;&#39;&#39;</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>        <span class="n">replicated</span> <span class="o">=</span> <span class="n">text</span> <span class="o">*</span> <span class="n">n</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>        <span class="n">cleaned</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">e</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">replicated</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>        <span class="k">return</span> <span class="n">cleaned</span>
 </span></pre></div>
 
 
@@ -92,22 +102,34 @@
     </div>
     <a class="headerlink" href="#JustSomeString"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="JustSomeString-2"><a href="#JustSomeString-2"><span class="linenos"> 2</span></a><span class="k">class</span> <span class="nc">JustSomeString</span><span class="p">:</span>
-</span><span id="JustSomeString-3"><a href="#JustSomeString-3"><span class="linenos"> 3</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="JustSomeString-4"><a href="#JustSomeString-4"><span class="linenos"> 4</span></a>        <span class="k">pass</span>
-</span><span id="JustSomeString-5"><a href="#JustSomeString-5"><span class="linenos"> 5</span></a>
-</span><span id="JustSomeString-6"><a href="#JustSomeString-6"><span class="linenos"> 6</span></a>    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="JustSomeString-7"><a href="#JustSomeString-7"><span class="linenos"> 7</span></a>        <span class="sd">&#39;&#39;&#39;</span>
-</span><span id="JustSomeString-8"><a href="#JustSomeString-8"><span class="linenos"> 8</span></a><span class="sd">        Replicates the text for the n of times informed in the &#39;n&#39;</span>
-</span><span id="JustSomeString-9"><a href="#JustSomeString-9"><span class="linenos"> 9</span></a><span class="sd">        parameter and then removes the elements in multiple positions of the</span>
-</span><span id="JustSomeString-10"><a href="#JustSomeString-10"><span class="linenos">10</span></a><span class="sd">        same parameter</span>
-</span><span id="JustSomeString-11"><a href="#JustSomeString-11"><span class="linenos">11</span></a><span class="sd">        &#39;&#39;&#39;</span>
-</span><span id="JustSomeString-12"><a href="#JustSomeString-12"><span class="linenos">12</span></a>        <span class="n">replicated</span> <span class="o">=</span> <span class="n">text</span> <span class="o">*</span> <span class="n">n</span>
-</span><span id="JustSomeString-13"><a href="#JustSomeString-13"><span class="linenos">13</span></a>        <span class="n">cleaned</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">e</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">replicated</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">])</span>
-</span><span id="JustSomeString-14"><a href="#JustSomeString-14"><span class="linenos">14</span></a>        <span class="k">return</span> <span class="n">cleaned</span>
+</span><span id="JustSomeString-3"><a href="#JustSomeString-3"><span class="linenos"> 3</span></a>    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="JustSomeString-4"><a href="#JustSomeString-4"><span class="linenos"> 4</span></a><span class="sd">    Provides `nonsense` string operations for educational purposes only</span>
+</span><span id="JustSomeString-5"><a href="#JustSomeString-5"><span class="linenos"> 5</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="JustSomeString-6"><a href="#JustSomeString-6"><span class="linenos"> 6</span></a>
+</span><span id="JustSomeString-7"><a href="#JustSomeString-7"><span class="linenos"> 7</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="JustSomeString-8"><a href="#JustSomeString-8"><span class="linenos"> 8</span></a>        <span class="sd">&quot;&quot;&quot;String  operations init&quot;&quot;&quot;</span>
+</span><span id="JustSomeString-9"><a href="#JustSomeString-9"><span class="linenos"> 9</span></a>        <span class="k">pass</span>
+</span><span id="JustSomeString-10"><a href="#JustSomeString-10"><span class="linenos">10</span></a>
+</span><span id="JustSomeString-11"><a href="#JustSomeString-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="JustSomeString-12"><a href="#JustSomeString-12"><span class="linenos">12</span></a>        <span class="sd">&#39;&#39;&#39;</span>
+</span><span id="JustSomeString-13"><a href="#JustSomeString-13"><span class="linenos">13</span></a><span class="sd">        Replicates the text for the n of times informed in the &#39;n&#39;</span>
+</span><span id="JustSomeString-14"><a href="#JustSomeString-14"><span class="linenos">14</span></a><span class="sd">        parameter and then removes the elements in multiple positions of the</span>
+</span><span id="JustSomeString-15"><a href="#JustSomeString-15"><span class="linenos">15</span></a><span class="sd">        same parameter</span>
+</span><span id="JustSomeString-16"><a href="#JustSomeString-16"><span class="linenos">16</span></a>
+</span><span id="JustSomeString-17"><a href="#JustSomeString-17"><span class="linenos">17</span></a><span class="sd">        :param str text: The text to be replicated and cropped</span>
+</span><span id="JustSomeString-18"><a href="#JustSomeString-18"><span class="linenos">18</span></a><span class="sd">        :param int n: The number of replications and the position</span>
+</span><span id="JustSomeString-19"><a href="#JustSomeString-19"><span class="linenos">19</span></a><span class="sd">            multiple for removal</span>
+</span><span id="JustSomeString-20"><a href="#JustSomeString-20"><span class="linenos">20</span></a><span class="sd">        :return string: the operation result</span>
+</span><span id="JustSomeString-21"><a href="#JustSomeString-21"><span class="linenos">21</span></a><span class="sd">        &#39;&#39;&#39;</span>
+</span><span id="JustSomeString-22"><a href="#JustSomeString-22"><span class="linenos">22</span></a>        <span class="n">replicated</span> <span class="o">=</span> <span class="n">text</span> <span class="o">*</span> <span class="n">n</span>
+</span><span id="JustSomeString-23"><a href="#JustSomeString-23"><span class="linenos">23</span></a>        <span class="n">cleaned</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">e</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">replicated</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="JustSomeString-24"><a href="#JustSomeString-24"><span class="linenos">24</span></a>        <span class="k">return</span> <span class="n">cleaned</span>
 </span></pre></div>
 
 
-    
+            <div class="docstring"><p>Provides <code>nonsense</code> string operations for educational purposes only</p>
+</div>
+
 
                             <div id="JustSomeString.__init__" class="classattr">
                                         <input id="JustSomeString.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -119,12 +141,15 @@
 
     </div>
     <a class="headerlink" href="#JustSomeString.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="JustSomeString.__init__-3"><a href="#JustSomeString.__init__-3"><span class="linenos">3</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="JustSomeString.__init__-4"><a href="#JustSomeString.__init__-4"><span class="linenos">4</span></a>        <span class="k">pass</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="JustSomeString.__init__-7"><a href="#JustSomeString.__init__-7"><span class="linenos">7</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="JustSomeString.__init__-8"><a href="#JustSomeString.__init__-8"><span class="linenos">8</span></a>        <span class="sd">&quot;&quot;&quot;String  operations init&quot;&quot;&quot;</span>
+</span><span id="JustSomeString.__init__-9"><a href="#JustSomeString.__init__-9"><span class="linenos">9</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
-    
+            <div class="docstring"><p>String  operations init</p>
+</div>
+
 
                             </div>
                             <div id="JustSomeString.operate" class="classattr">
@@ -138,21 +163,40 @@
 
     </div>
     <a class="headerlink" href="#JustSomeString.operate"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="JustSomeString.operate-6"><a href="#JustSomeString.operate-6"><span class="linenos"> 6</span></a>    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="JustSomeString.operate-7"><a href="#JustSomeString.operate-7"><span class="linenos"> 7</span></a>        <span class="sd">&#39;&#39;&#39;</span>
-</span><span id="JustSomeString.operate-8"><a href="#JustSomeString.operate-8"><span class="linenos"> 8</span></a><span class="sd">        Replicates the text for the n of times informed in the &#39;n&#39;</span>
-</span><span id="JustSomeString.operate-9"><a href="#JustSomeString.operate-9"><span class="linenos"> 9</span></a><span class="sd">        parameter and then removes the elements in multiple positions of the</span>
-</span><span id="JustSomeString.operate-10"><a href="#JustSomeString.operate-10"><span class="linenos">10</span></a><span class="sd">        same parameter</span>
-</span><span id="JustSomeString.operate-11"><a href="#JustSomeString.operate-11"><span class="linenos">11</span></a><span class="sd">        &#39;&#39;&#39;</span>
-</span><span id="JustSomeString.operate-12"><a href="#JustSomeString.operate-12"><span class="linenos">12</span></a>        <span class="n">replicated</span> <span class="o">=</span> <span class="n">text</span> <span class="o">*</span> <span class="n">n</span>
-</span><span id="JustSomeString.operate-13"><a href="#JustSomeString.operate-13"><span class="linenos">13</span></a>        <span class="n">cleaned</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">e</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">replicated</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">])</span>
-</span><span id="JustSomeString.operate-14"><a href="#JustSomeString.operate-14"><span class="linenos">14</span></a>        <span class="k">return</span> <span class="n">cleaned</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="JustSomeString.operate-11"><a href="#JustSomeString.operate-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="nf">operate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="JustSomeString.operate-12"><a href="#JustSomeString.operate-12"><span class="linenos">12</span></a>        <span class="sd">&#39;&#39;&#39;</span>
+</span><span id="JustSomeString.operate-13"><a href="#JustSomeString.operate-13"><span class="linenos">13</span></a><span class="sd">        Replicates the text for the n of times informed in the &#39;n&#39;</span>
+</span><span id="JustSomeString.operate-14"><a href="#JustSomeString.operate-14"><span class="linenos">14</span></a><span class="sd">        parameter and then removes the elements in multiple positions of the</span>
+</span><span id="JustSomeString.operate-15"><a href="#JustSomeString.operate-15"><span class="linenos">15</span></a><span class="sd">        same parameter</span>
+</span><span id="JustSomeString.operate-16"><a href="#JustSomeString.operate-16"><span class="linenos">16</span></a>
+</span><span id="JustSomeString.operate-17"><a href="#JustSomeString.operate-17"><span class="linenos">17</span></a><span class="sd">        :param str text: The text to be replicated and cropped</span>
+</span><span id="JustSomeString.operate-18"><a href="#JustSomeString.operate-18"><span class="linenos">18</span></a><span class="sd">        :param int n: The number of replications and the position</span>
+</span><span id="JustSomeString.operate-19"><a href="#JustSomeString.operate-19"><span class="linenos">19</span></a><span class="sd">            multiple for removal</span>
+</span><span id="JustSomeString.operate-20"><a href="#JustSomeString.operate-20"><span class="linenos">20</span></a><span class="sd">        :return string: the operation result</span>
+</span><span id="JustSomeString.operate-21"><a href="#JustSomeString.operate-21"><span class="linenos">21</span></a><span class="sd">        &#39;&#39;&#39;</span>
+</span><span id="JustSomeString.operate-22"><a href="#JustSomeString.operate-22"><span class="linenos">22</span></a>        <span class="n">replicated</span> <span class="o">=</span> <span class="n">text</span> <span class="o">*</span> <span class="n">n</span>
+</span><span id="JustSomeString.operate-23"><a href="#JustSomeString.operate-23"><span class="linenos">23</span></a>        <span class="n">cleaned</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">e</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">replicated</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="JustSomeString.operate-24"><a href="#JustSomeString.operate-24"><span class="linenos">24</span></a>        <span class="k">return</span> <span class="n">cleaned</span>
 </span></pre></div>
 
 
             <div class="docstring"><p>Replicates the text for the n of times informed in the 'n'
 parameter and then removes the elements in multiple positions of the
 same parameter</p>
+
+<h6 id="parameters">Parameters</h6>
+
+<ul>
+<li><strong>str text</strong>:  The text to be replicated and cropped</li>
+<li><strong>int n</strong>:  The number of replications and the position
+multiple for removal</li>
+</ul>
+
+<h6 id="returns">Returns</h6>
+
+<blockquote>
+  <p>the operation result</p>
+</blockquote>
 </div>
 
 
