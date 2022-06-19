@@ -17,3 +17,6 @@ Este é um projeto de teste para fazer experimentações de DevOps no GitHub
     - `flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics`
 - Para atualizar a documentação gerada automaticamente (dentro da pasta de [documentação](docs/)) utilize o pdoc
     - `pdoc src\complexoperations -o docs`
+
+## Para contribuir
+- Use sua imaginação
