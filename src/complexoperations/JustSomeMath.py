@@ -14,7 +14,7 @@ class JustSomeMath:
     def operate(self, number: int = 0) -> int:
         '''
         Does an exponentiation operation on the passed number
-        using a random exponent
+        using a random exponent. Blz?
 
         :param int number: The number for the complex operation
         :return int: the operation result
