@@ -4,7 +4,7 @@ name: Publish on TestPypi
 
 on:
   release:
-    types: [published]
+    types: [prereleased]
 
 jobs:
   
@@ -12,12 +12,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=tag::${github.ref_name#refs/*/}
+      - name: Check output
+        env:
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+        run: |
+          echo $RELEASE_VERSION
+          echo ${{ steps.vars.outputs.tag }}
       - name: Fetch Github Release Asset
         uses: dsaltares/fetch-gh-release-asset@1.0.0
         with:
           regex: true
           file: "complexoperations.*"
           target: "dist/"
+          version: ${{ RELEASE_VERSION }}
           token: ${{ secrets.MY_TOKEN }}
       - name: Publish to TestPyPi
         uses: pypa/gh-action-pypi-publish@release/v1
