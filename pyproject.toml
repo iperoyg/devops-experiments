@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "complexoperations_iperoyg"
-version = "0.0.6"
+version = "0.0.6-a1"
 authors = [
   { name="Arthur Iperoyg", email="iperoyg@gmail.com" },
 ]
