@@ -62,5 +62,5 @@ jobs:
         with:
           artifacts: "dist/*"
           generateReleaseNotes: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_TOKEN }}
           prerelease: true

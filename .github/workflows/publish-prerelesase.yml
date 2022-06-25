@@ -18,7 +18,7 @@ jobs:
           regex: true
           file: "complexoperations.*"
           target: "dist/"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_TOKEN }}
       - name: Publish to TestPyPi
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
