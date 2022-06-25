@@ -29,3 +29,8 @@ jobs:
     - name: Create Dist
       run: |
         python -m build
+    - name: Publish to TestPyPi
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        user: __token__
+        password: ${{ secrets.TESTPYPI_API_TOKEN }}
