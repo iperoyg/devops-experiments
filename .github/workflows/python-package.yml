@@ -37,7 +37,7 @@ jobs:
       run: |
         pytest
 
-  prerelease:
+  release:
     needs: build
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
@@ -58,9 +58,28 @@ jobs:
       - name: Create Dist
         run: |
           python -m build
-      - uses: ncipollo/release-action@v1
+      - name: Check Tag Type
+        id: tagtype
+        run: |
+          if [[ ${{ github.event.ref }} =~ ^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+[ab][0-9]+$ ]]; then
+              echo ::set-output name=type::pre
+          fi
+          if [[ ${{ github.event.ref }} =~ ^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo ::set-output name=type::release
+          fi
+      - name: Publish PreRelease
+        if: steps.tagtype.outputs.type == 'pre'
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/*"
           generateReleaseNotes: true
           token: ${{ secrets.MY_TOKEN }}
           prerelease: true
+      - name: Publish Release
+        if: steps.tagtype.outputs.type == 'release'
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "dist/*"
+          generateReleaseNotes: true
+          token: ${{ secrets.MY_TOKEN }}
+          prerelease: false
