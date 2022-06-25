@@ -7,7 +7,7 @@ on:
     workflows: ['Python Package CI']
     types: [completed]
     branches:
-      - '*'
+      - 'feature/*'
 jobs:
   
   build:
