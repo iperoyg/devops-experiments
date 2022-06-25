@@ -22,7 +22,7 @@ jobs:
           regex: true
           file: "complexoperations.*"
           target: "dist/"
-          version: ${{ github.event.release.tag_name }}
+          version: tags/${{ github.event.release.tag_name }}
           token: ${{ secrets.MY_TOKEN }}
       - name: Publish to TestPyPi
         uses: pypa/gh-action-pypi-publish@release/v1
