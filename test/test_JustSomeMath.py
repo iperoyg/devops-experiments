@@ -7,7 +7,7 @@ class TestJustSomeMath:
         # Arrange
         complexop = JustSomeMath()
         number = 1
-        
+
         # Act
         result = complexop.operate(number)
 
