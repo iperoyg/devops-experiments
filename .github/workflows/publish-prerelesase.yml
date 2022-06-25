@@ -4,7 +4,7 @@ name: Publish on TestPypi
 
 on:
   release:
-    types: [prereleased]
+    types: [published]
 
 jobs:
   
