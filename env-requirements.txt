@@ -1,0 +1,5 @@
+pytest==7.1.*
+flake8
+pdoc==12.*
+build==0.8.*
+twine
