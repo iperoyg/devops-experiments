@@ -2,26 +2,20 @@ name: FastAPI Deploy
 
 on:
   workflow_call:
-    inputs:
-      heroku_app_name:
-        required: true
-        type: string
-      heroku_email:
-        required: true
-        type: string
     secrets:
       HEROKU_API_KEY:
+        required: true
+      HEROKU_APP_NAME:
+        required: true
+      HEROKU_EMAIL:
         required: true
   workflow_dispatch:
-    inputs:
-      heroku_app_name:
-        required: true
-        type: string
-      heroku_email:
-        required: true
-        type: string
     secrets:
       HEROKU_API_KEY:
+        required: true
+      HEROKU_APP_NAME:
+        required: true
+      HEROKU_EMAIL:
         required: true
     
 jobs:
@@ -32,7 +26,7 @@ jobs:
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
-        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-        heroku_app_name: ${{ inputs.heroku_app_name }}
-        heroku_email: ${{ inputs.heroku_email }}
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+        heroku_email: ${{ secrets.HEROKU_EMAIL }}
         appdir: "src/apicomplexoperations"
