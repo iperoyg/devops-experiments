@@ -18,5 +18,7 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/api-deploy.yml
+    with:
+      tag_name: latest
     secrets: inherit
     
