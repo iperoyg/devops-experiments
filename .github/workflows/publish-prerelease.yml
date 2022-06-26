@@ -1,0 +1,33 @@
+# Publish Python Package to Test Pypi
+
+name: Publish on TestPypi
+
+on:
+  release:
+    types: [prereleased]
+
+jobs:
+  
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check release
+        run: |
+          echo ${{ github.event.release.tag_name }}
+      - name: Fetch Github Release Asset
+        uses: dsaltares/fetch-gh-release-asset@1.0.0
+        with:
+          regex: true
+          file: "complexoperations.*"
+          target: "dist/"
+          version: tags/${{ github.event.release.tag_name }}
+          token: ${{ secrets.MY_TOKEN }}
+      - name: Publish to TestPyPi
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.TESTPYPI_API_TOKEN }}
+          repository_url: https://test.pypi.org/legacy/
+          skip_existing: true
