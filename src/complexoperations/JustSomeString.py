@@ -7,7 +7,7 @@ class JustSomeString:
         """String  operations init"""
         pass
 
-    def operate(self, text: str, n: int = 1) -> int:
+    def operate(self, text: str, n: int = 0) -> int:
         '''
         Replicates the text for the n of times informed in the 'n'
         parameter and then removes the elements in multiple positions of the
