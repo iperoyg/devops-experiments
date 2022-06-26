@@ -32,21 +32,21 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Check Tag Version
-        id: tagver
-        run: |
-          if [[ ${{ inputs.tag_name }} =~ ^latest$ ]]; then
-              echo ::set-output name=version::${{ inputs.tag_name }}
-          else
-              echo ::set-output name=version::tags/${{ inputs.tag_name }}
-          fi
+      id: tagver
+      run: |
+        if [[ ${{ inputs.tag_name }} =~ ^latest$ ]]; then
+            echo ::set-output name=version::${{ inputs.tag_name }}
+        else
+            echo ::set-output name=version::tags/${{ inputs.tag_name }}
+        fi
     - name: Fetch Github Release Asset
-        uses: dsaltares/fetch-gh-release-asset@1.0.0
-        with:
-          regex: true
-          file: "complexoperations.*"
-          target: "src/apicomplexoperations/dep/"
-          version: steps.tagver.outputs.version
-          token: ${{ secrets.MY_TOKEN }}
+      uses: dsaltares/fetch-gh-release-asset@1.0.0
+      with:
+        regex: true
+        file: "complexoperations.*"
+        target: "src/apicomplexoperations/dep/"
+        version: steps.tagver.outputs.version
+        token: ${{ secrets.MY_TOKEN }}
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
