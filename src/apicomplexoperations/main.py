@@ -17,5 +17,5 @@ async def complex_math(number: int = 0):
 
 
 @app.get("/string")
-async def complex_string(text: str, number: int = 1):
+async def complex_string(text: str, number: int = 0):
     return {"message": stringop.operate(text, number)}
