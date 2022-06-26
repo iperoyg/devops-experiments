@@ -45,7 +45,7 @@ jobs:
         regex: true
         file: "complexoperations.*"
         target: "src/apicomplexoperations/dep/"
-        version: steps.tagver.outputs.version
+        version: ${{ steps.tagver.outputs.version }}
         token: ${{ secrets.MY_TOKEN }}
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12
