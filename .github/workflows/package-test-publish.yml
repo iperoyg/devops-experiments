@@ -2,9 +2,7 @@
 
 name: Publish on TestPypi
 
-on:
-  release:
-    types: [prereleased]
+on: workflow_dispatch
 
 jobs:
   
@@ -13,17 +11,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Check release
-        run: |
-          echo ${{ github.event.release.tag_name }}
-      - name: Fetch Github Release Asset
-        uses: dsaltares/fetch-gh-release-asset@1.0.0
+      - uses: actions/setup-python@v3
         with:
-          regex: true
-          file: "complexoperations.*"
-          target: "dist/"
-          version: tags/${{ github.event.release.tag_name }}
-          token: ${{ secrets.MY_TOKEN }}
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f dev_requirements.txt ]; then pip install -r dev_requirements.txt; fi
+      - name: Create Distribution
       - name: Publish to TestPyPi
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
