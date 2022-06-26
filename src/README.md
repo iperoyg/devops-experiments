@@ -6,3 +6,12 @@ Documentação de `Markdown` para um exemplo:
 
 
 **Certo?**
+
+## API
+Esse projeto possui uma API baseada em FastAPI. Para executá-la, a partir do raiz do projeto utilize:
+
+`uvicorn --app-dir src\apicomplexoperations main:app --reload`
+
+E abra:
+
+http://127.0.0.1:8000/
