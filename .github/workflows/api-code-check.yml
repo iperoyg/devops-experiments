@@ -22,8 +22,8 @@ jobs:
         pip install -r src/apicomplexoperations/requirements.txt
     - name: Lint with flake8
       run: |
-        flake8 --filename=./src/apicomplexoperations/*.py --count --statistics
-        flake8 --filename=./src/apicomplexoperations/*.py --count --statistics --exit-zero --max-complexity=10 --max-line-length=127
+        flake8 --filename=./src/apicomplexoperations/*.py --count --statistics --ignore E402
+        flake8 --filename=./src/apicomplexoperations/*.py --count --statistics --exit-zero --max-complexity=10 --max-line-length=127 --ignore E402
         flake8 --filename=./test/apicomplexoperations/*.py --count --statistics
         flake8 --filename=./test/apicomplexoperations/*.py --count --statistics --exit-zero --max-complexity=10 --max-line-length=127
     - name: Test with pytest
