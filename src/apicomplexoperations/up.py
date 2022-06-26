@@ -7,11 +7,8 @@ noindex = "--no-index"
 folder = "--find-links=dep/"
 params = [sys.executable, "-m", "pip", "install", noindex, folder, pkg]
 subprocess.check_call(params)
-
-from main import app
-
-apiapp = app
-port = int(sys.argv[1])
+config_port = int(sys.argv[1])
 
 if __name__ == "__main__":
-    uvicorn.run("up:apiapp", host="127.0.0.1", port=port, log_level="trace")
+    print('port', config_port)
+    uvicorn.run("main:app", host="0.0.0.0", port=config_port, log_level="trace")
