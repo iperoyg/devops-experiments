@@ -21,3 +21,8 @@ class TestFastAPIMain:
         response = client.get("/string?text=abc&number=2")
         assert response.status_code == 200
         assert response.json() == {"message": "bac"}
+
+    def test_health_check(self):
+        response = client.get("/health")
+        assert response.status_code == 200
+        assert response.json() == {"message": "Healthy"}
