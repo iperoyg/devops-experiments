@@ -19,6 +19,8 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f dev_requirements.txt ]; then pip install -r dev_requirements.txt; fi
       - name: Create Distribution
+        run: |
+          python -m build
       - name: Publish to TestPyPi
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
