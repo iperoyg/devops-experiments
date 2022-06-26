@@ -7,7 +7,8 @@ on:
     tags: v*
   pull_request:
     branches: [ "main" ]
-
+  workflow_dispatch:
+    
 jobs:
   
   build:
@@ -29,11 +30,13 @@ jobs:
         if [ -f dev_requirements.txt ]; then pip install -r dev_requirements.txt; fi
     - name: Lint with flake8
       run: |
-        flake8 . --count --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        flake8 --filename=./src/complexoperations/*.py --count --statistics
+        flake8 --filename=./src/complexoperations/*.py --count --statistics --exit-zero --max-complexity=10 --max-line-length=127
+        flake8 --filename=./test/complexoperations/*.py --count --statistics
+        flake8 --filename=./test/complexoperations/*.py --count --statistics --exit-zero --max-complexity=10 --max-line-length=127
     - name: Test with pytest
       run: |
-        pytest
+        pytest test/complexoperations 
 
   release:
     needs: build

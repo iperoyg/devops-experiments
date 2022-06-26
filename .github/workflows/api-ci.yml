@@ -33,7 +33,7 @@ jobs:
         flake8 --filename=./src/apicomplexoperations/*.py --count --statistics
         flake8 --filename=./src/apicomplexoperations/*.py --count --statistics --exit-zero --max-complexity=10 --max-line-length=127
         flake8 --filename=./test/apicomplexoperations/*.py --count --statistics
-        flake8 --filename=./test/apicomplexoperations/*.py --count --statistics --exit-zero --max-complexity=10 --max-line-length=127        
+        flake8 --filename=./test/apicomplexoperations/*.py --count --statistics --exit-zero --max-complexity=10 --max-line-length=127
     - name: Test with pytest
       run: |
         pytest test/apicomplexoperations 
