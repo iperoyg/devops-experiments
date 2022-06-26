@@ -1,2 +1,3 @@
 fastapi==0.78.*
 uvicorn[standard]
+complexoperations-iperoyg
