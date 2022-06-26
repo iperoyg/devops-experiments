@@ -26,5 +26,5 @@ async def health_check():
     if mathop is not None and stringop is not None:
         return {"message": "Healthy"}
     else:
-        msg = "We have problem! Complex Operation are None"
+        msg = "We have problem! Complex Operation is None"
         HTTPException(status_code=500, detail=msg)
