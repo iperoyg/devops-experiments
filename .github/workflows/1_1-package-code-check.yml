@@ -1,4 +1,4 @@
-name: Package Check
+name: Package Code Check
 
 on:
   workflow_call:

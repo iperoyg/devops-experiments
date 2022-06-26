@@ -11,7 +11,7 @@ on:
     
 jobs:
   build:
-    uses: ./.github/workflows/package-code-check.yml
+    uses: ./.github/workflows/1_1-package-code-check.yml
     secrets: inherit
 
   release:

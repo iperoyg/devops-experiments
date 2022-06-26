@@ -2,7 +2,7 @@ name: Package to API CD
 
 on:
   workflow_run:
-    workflows: [Publish on PyPi]
+    workflows: [Package Release]
     types: [completed]
     
 jobs:

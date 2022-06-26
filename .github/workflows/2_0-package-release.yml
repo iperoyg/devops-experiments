@@ -1,0 +1,15 @@
+# Publish Python Package to Pypi
+
+name: Package Release
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  
+  publish:
+    uses: ./.github/workflows/2_1-package-publish-on-pypi.yml
+    with:
+      tag_name: ${{ github.event.release.tag_name }}
+    secrets: inherit

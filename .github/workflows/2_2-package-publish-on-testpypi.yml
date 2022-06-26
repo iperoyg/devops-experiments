@@ -1,5 +1,3 @@
-# Publish Python Package to Test Pypi
-
 name: Publish on TestPypi
 
 on: workflow_dispatch
