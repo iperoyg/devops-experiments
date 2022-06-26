@@ -11,4 +11,6 @@ config_port = int(sys.argv[1])
 
 if __name__ == "__main__":
     print('port', config_port)
-    uvicorn.run("main:app", host="0.0.0.0", port=config_port, log_level="trace")
+    local = "0.0.0.0"
+    log = "trace"
+    uvicorn.run("main:app", host=local, port=config_port, log_level=log)
