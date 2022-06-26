@@ -41,7 +41,7 @@ jobs:
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
-    uses: ./.github/workflows/api-deploy.yml@main
+    uses: ./.github/workflows/api-deploy.yml
     with:
       heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
       heroku_email:  ${{ secrets.HEROKU_EMAIL }}
