@@ -15,5 +15,7 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/api-deploy.yml
+    with:
+      tag_name: latest
     secrets: inherit
     
