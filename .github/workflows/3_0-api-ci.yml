@@ -11,13 +11,13 @@ on:
 jobs:
   
   build:
-    uses: ./.github/workflows/api-code-check.yml
+    uses: ./.github/workflows/3_1-api-code-check.yml
     secrets: inherit
 
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
-    uses: ./.github/workflows/api-deploy.yml
+    uses: ./.github/workflows/3_2-api-deploy.yml
     with:
       tag_name: latest
     secrets: inherit

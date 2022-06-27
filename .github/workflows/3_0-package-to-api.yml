@@ -9,12 +9,12 @@ jobs:
   
   build:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    uses: ./.github/workflows/api-code-check.yml
+    uses: ./.github/workflows/3_1-api-code-check.yml
     secrets: inherit
 
   deploy:
     needs: build
-    uses: ./.github/workflows/api-deploy.yml
+    uses: ./.github/workflows/3_2-api-deploy.yml
     with:
       tag_name: latest
     secrets: inherit
