@@ -20,6 +20,8 @@ class JustSomeString:
         '''
         if n == 42:
             return "Essa é a resposta para todas as perguntas"
+        if n == 13:
+            return "É galo"
         replicated = text * n
         cleaned = ''.join([e for i, e in enumerate(replicated) if i % n != 0])
         return cleaned
