@@ -1,14 +1,16 @@
 FROM python:3.9-alpine
 
 WORKDIR /src
-ENV PORT=80
-EXPOSE ${PORT}
-
-COPY requirements.txt ./
 
 RUN apk add build-base
-RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY ./requirements.txt /src/requirements.txt
+RUN pip install --no-cache-dir -r /src/requirements.txt
 
-CMD [ "echo $PORT" ]
+COPY ./dep/ /src/dep/
+RUN pip install --no-cache-dir --no-index --find-links=/src/dep/ complexoperations-iperoyg
+
+COPY . /src
+RUN cd /src
+
+CMD uvicorn main:app --host 0.0.0.0 --port $PORT

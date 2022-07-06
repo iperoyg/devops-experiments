@@ -18,4 +18,8 @@ http://127.0.0.1:8000/
 
 ## Docker
 
-- `docker build -t complexopapi -f Dockerfile.API .`
+- Build Image: `docker build -t complexop_iperoyg/api -f Dockerfile.API .`
+- Open Shell: `docker run -it --rm --name api_container complexop_iperoyg/api sh`
+
+
+
