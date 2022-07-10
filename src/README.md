@@ -18,8 +18,16 @@ http://127.0.0.1:8000/
 
 ## Docker
 
-- Build Image: `docker build -t complexop_iperoyg/api -f Dockerfile.API .`
-- Open Shell: `docker run -it --rm --name api_container complexop_iperoyg/api sh`
+- Build Image: `docker build -t iperoyg/complexop_api:v1.0.0 -f Dockerfile.API .`
+- Open Shell: `docker run -it --rm --name api_container iperoyg/complexop_api:v1.0.0 sh`
+- Run API:
+    - `docker run -d -p 12345:80 --name api_container iperoyg/complexop_api:v1.0.0 uvicorn main:app --host 0.0.0.0 --port 80`
+    - `docker run -d --rm -p 12345:80 --env PORT=80 --name api_container iperoyg/complexop_api:v1.0.0`
+- Push to registry:
+    - `docker push iperoyg/complexop_api:v1.0.0`
 
 
-
+## Kubernetes
+- kubectl get deploy
+- kubectl delete deploy <deployment name>
+- kubectl apply -f .\kubernetes_deploy.yml

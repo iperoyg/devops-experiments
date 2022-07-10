@@ -1,0 +1,64 @@
+# check out all Kubernetes commands here:
+# https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+# -----------------------------------------------------------*
+# implies the use of kubernetes 1.7
+# -----------------------------------------------------------*
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complexop-api
+  namespace: default
+spec:
+  replicas: 2                     # this is number of pods
+  selector:
+    matchLabels:
+      app: complexop-api
+  template:
+    metadata:
+      labels:
+        app: complexop-api
+    spec:
+      # Kubernetes run docker pull pseudo/your-image:latest under the hood
+      # Image field in Kubernetes resources is simply the docker image to run.
+      containers:
+      - name: complexop-api
+        image: iperoyg/complexop_api:v1.0.0
+        env:
+        - name: PORT
+          value: "42"
+        # specify the container port
+        ports:
+        - containerPort: 42
+        # using if not present works well with images that has tag
+        # if you image is tag:lastest - use Always otherwise you
+        # wouldn't get the fresh version of your image
+        # imagePullPolicy: Always
+        # -----------------------------------------------------------*
+        # It is a good practice to declare resource requests and 
+        # limits for both memory and cpu for each container. 
+        # This helps to schedule the container to a node that has 
+        # available resources for your Pod, and also so that your 
+        # Pod does not use resources that other Pods needs
+        # -----------------------------------------------------------*
+        resources:
+          limits:
+            memory: 64Mi
+            cpu: "250m"
+          requests:
+            memory: 32Mi
+            cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: complexop-api-entrypoint
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: complexop-api
+  ports:
+    - name: http
+      protocol: TCP
+      port: 30000
+      targetPort: 42
