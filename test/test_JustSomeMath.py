@@ -8,6 +8,7 @@ class TestJustSomeMath:
         complexop = JustSomeMath()
         number = 1
 
+
         # Act
         result = complexop.operate(number)
 
