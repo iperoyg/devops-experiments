@@ -58,3 +58,17 @@ class TestJustSomeString:
         assert result == 'Essa é a resposta para todas as perguntas'
 
         pass
+
+    def test5(self):
+        # Arrange
+        complexop = JustSomeString()
+        number = 666
+        text = 'abcd'
+
+        # Act
+        result = complexop.operate(text, number)
+
+        # Assert
+        assert result == 'O.O'
+
+        pass
