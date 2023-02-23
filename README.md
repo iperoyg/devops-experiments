@@ -2,7 +2,7 @@
 Este é um projeto de teste para fazer experimentações de DevOps no GitHub
 
 
-*Author:* [Arthur Iperoyg](mailto:iperoyg@gmail.com)
+*Authors:* [Arthur Iperoyg](mailto:iperoyg@gmail.com), [Ramon Durães](mailto:ramongduraes@gmail.com)  
 
 
 ## Basic instructions
